@@ -1,0 +1,20 @@
+jacoco {
+    toolVersion = "0.8.8"
+}
+
+// TODO Add JaCoCo reporting to PRs: https://github.com/marketplace/actions/jacoco-report
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacoco')
+    }
+    afterEvaluate { // (optional) : to exclude classes / packages from coverage
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(
+                    dir: it,
+                    exclude: ['snmaddula/sboot/crud/App.class', 'snmaddula/sboot/util/**'])
+        })
+    }
+}

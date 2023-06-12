@@ -1,0 +1,19 @@
+spotless {
+    java {
+        // optional: you can specify import groups directly
+        // note: you can use an empty string for all the imports you didn't specify explicitly, '|' to join group without blank line, and '\\#` prefix for static imports
+        importOrder('java|javax', 'com.slalombuild', '', '\\#com.slalombuild', '\\#')
+
+        removeUnusedImports()
+
+        // Will refactor your code, but it may break your style: apply it before your formatter
+        cleanthat()
+
+        // Formatting rules.
+        googleJavaFormat()
+
+        formatAnnotations() // fixes formatting of type annotations
+
+        licenseHeader '/* (C) $YEAR */' // or licenseHeaderFile
+    }
+}
