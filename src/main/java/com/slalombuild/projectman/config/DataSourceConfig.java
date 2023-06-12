@@ -10,7 +10,7 @@ public class DataSourceConfig {
 
   // Define the datasource bean
   public DataSource dataSource() {
-    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    var dataSource = new DriverManagerDataSource();
     dataSource.setDriverClassName("org.h2.Driver");
     dataSource.setUrl("jdbc:h2:mem:testdb"); // Change this URL as per your needs
     dataSource.setUsername("username"); // Change username
