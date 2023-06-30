@@ -1,3 +1,4 @@
+/* (C) 2023 */
 package com.slalombuild.projectman.domain.entity;
 
 import jakarta.persistence.Entity;
@@ -13,10 +14,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Project {
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private String name;
+  private String name;
 
-    private String marketName;
+  private String marketName;
 }

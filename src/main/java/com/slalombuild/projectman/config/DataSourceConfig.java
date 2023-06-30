@@ -8,5 +8,4 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties
-public class DataSourceConfig {
-}
+public class DataSourceConfig {}
