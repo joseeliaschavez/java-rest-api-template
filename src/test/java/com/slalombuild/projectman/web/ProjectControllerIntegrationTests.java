@@ -24,7 +24,7 @@ public class ProjectControllerIntegrationTests {
 
   @Test
   public void givenProjects_whenGetProjects_ThenStatus200() throws Exception {
-    // TODO why is application-test not loading?
+    // TODO why is application-test.yaml not loading?
     mockMvc
         .perform(get("/project").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
