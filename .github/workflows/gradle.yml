@@ -18,7 +18,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +32,8 @@ jobs:
       with:
         gradle-version: wrapper
         arguments: test
+    - name: Run Integration Tests
+      uses: gradle/gradle-build-action@v2
+      with:
+        gradle-version: wrapper
+        arguments: integrationTest
