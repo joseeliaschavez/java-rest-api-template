@@ -7,14 +7,16 @@ import java.util.List;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/projects")
 @RequiredArgsConstructor
 public class ProjectController {
   @NonNull private ProjectService projectService;
 
-  @GetMapping("/project")
+  @GetMapping
   public List<Project> getProjects() {
     return projectService.getAllProjects();
   }

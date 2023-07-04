@@ -26,7 +26,7 @@ public class ProjectControllerIntegrationTests {
   public void givenProjects_whenGetProjects_ThenStatus200() throws Exception {
     // TODO why is application-test.yaml not loading?
     mockMvc
-        .perform(get("/project").contentType(MediaType.APPLICATION_JSON))
+        .perform(get("/projects").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
         .andExpect(jsonPath("$[0].name", is("Telecom Customer Enhancement")));
