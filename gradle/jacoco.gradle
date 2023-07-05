@@ -14,7 +14,13 @@ jacocoTestReport {
         classDirectories.from = files(classDirectories.files.collect {
             fileTree(
                     dir: it,
-                    exclude: ['snmaddula/sboot/crud/App.class', 'snmaddula/sboot/util/**'])
+                    exclude: [
+                        'com/slalombuild/projectman/ProjectmanApplication.class',
+                        'com/slalombuild/projectman/config/**',
+                        'com/slalombuild/projectman/domain/entity/**',
+                        'com/slalombuild/projectman/domain/repository/**'
+                    ]
+            )
         })
     }
 }

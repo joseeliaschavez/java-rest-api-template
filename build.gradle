@@ -8,6 +8,7 @@ plugins {
 
 apply from: 'gradle/spotless.gradle'
 apply from: 'gradle/jacoco.gradle'
+apply from: 'gradle/integration.gradle'
 
 group = 'com.slalombuild'
 version = '0.0.1-SNAPSHOT'
@@ -25,12 +26,13 @@ repositories {
 
 dependencies {
 	// Spring Dependencies
-	developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// Uncomment if you wish to use Docker Compose on local application startup
+	//developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
 	// Mock DB
 	implementation 'com.h2database:h2'
@@ -38,6 +40,10 @@ dependencies {
 	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Unit testing
+	testImplementation 'org.mockito:mockito-core:5.+'
+	testImplementation 'org.instancio:instancio-junit:2.+'
 }
 
 tasks.named('test') {
