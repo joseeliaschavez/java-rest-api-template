@@ -2,6 +2,7 @@
 package com.slalombuild.projectman.domain.entity;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,9 @@ public class Project {
   private Long id;
 
   private String name;
+
+  private LocalDate startDate;
+  private LocalDate endDate;
 
   @ManyToOne
   @JoinColumn(name = "clientId")

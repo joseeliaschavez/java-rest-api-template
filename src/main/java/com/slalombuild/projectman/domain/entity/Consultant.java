@@ -26,6 +26,6 @@ public class Consultant {
   private Market market;
 
   @ManyToOne
-  @JoinColumn(name = "statement_of_work_id")
-  private StatementOfWork statementOfWork;
+  @JoinColumn(name = "projectId")
+  private Project project;
 }
