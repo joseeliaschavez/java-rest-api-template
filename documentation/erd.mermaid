@@ -13,15 +13,7 @@ erDiagram
         int clientId FK
         int marketId FK
     }
-    PROJECT ||--o{ STATEMENT_OF_WORK : has
-    STATEMENT_OF_WORK {
-        int id PK
-        string name
-        date startDate
-        date endDate
-        int projectId FK
-    }
-    STATEMENT_OF_WORK ||--|{ CONSULTANT : assigned
+    PROJECT ||--o{ CONSULTANT : assigned
     CONSULTANT {
         int id PK
         string firstName
