@@ -16,6 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class ProjectServiceTests {
   @Mock private ProjectRepository projectRepository;
+
   @InjectMocks private ProjectService service;
 
   @Test

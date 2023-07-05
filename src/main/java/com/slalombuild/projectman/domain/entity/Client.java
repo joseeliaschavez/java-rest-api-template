@@ -10,18 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Project {
+public class Client {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String name;
 
-  @ManyToOne
-  @JoinColumn(name = "clientId")
-  private Client client;
-
-  @ManyToOne
-  @JoinColumn(name = "marketId")
-  private Market market;
+  @Enumerated(EnumType.STRING)
+  private Industry industry;
 }

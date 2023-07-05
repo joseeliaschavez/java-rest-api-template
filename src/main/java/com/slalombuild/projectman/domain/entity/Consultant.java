@@ -10,18 +10,22 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Project {
+public class Consultant {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
+  private String firstName;
+  private String lastName;
 
-  @ManyToOne
-  @JoinColumn(name = "clientId")
-  private Client client;
+  @Enumerated(EnumType.STRING)
+  private Capability capability;
 
   @ManyToOne
   @JoinColumn(name = "marketId")
   private Market market;
+
+  @ManyToOne
+  @JoinColumn(name = "statement_of_work_id")
+  private StatementOfWork statementOfWork;
 }
