@@ -29,6 +29,6 @@ public class ProjectControllerIntegrationTests {
         .perform(get("/projects").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$[0].name", containsString("Cross-platform")));
+        .andExpect(jsonPath("$.projects[0].name", containsString("Cross-platform")));
   }
 }
