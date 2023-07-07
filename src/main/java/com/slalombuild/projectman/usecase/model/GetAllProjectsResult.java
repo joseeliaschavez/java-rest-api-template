@@ -1,7 +1,6 @@
 /* (C) 2023 */
-package com.slalombuild.projectman.usecase;
+package com.slalombuild.projectman.usecase.model;
 
-import com.slalombuild.projectman.usecase.model.ProjectViewModel;
 import java.util.List;
 import lombok.NonNull;
 import lombok.Value;

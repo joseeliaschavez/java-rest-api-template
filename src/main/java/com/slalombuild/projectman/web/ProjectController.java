@@ -1,8 +1,8 @@
 /* (C) 2023 */
 package com.slalombuild.projectman.web;
 
-import com.slalombuild.projectman.usecase.GetAllProjectsResult;
 import com.slalombuild.projectman.usecase.GetAllProjectsUseCase;
+import com.slalombuild.projectman.usecase.model.GetAllProjectsResult;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

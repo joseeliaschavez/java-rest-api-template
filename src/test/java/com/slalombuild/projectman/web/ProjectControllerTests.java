@@ -4,8 +4,8 @@ package com.slalombuild.projectman.web;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-import com.slalombuild.projectman.usecase.GetAllProjectsResult;
 import com.slalombuild.projectman.usecase.GetAllProjectsUseCase;
+import com.slalombuild.projectman.usecase.model.GetAllProjectsResult;
 import com.slalombuild.projectman.usecase.model.ProjectViewModel;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;

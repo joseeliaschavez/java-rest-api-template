@@ -2,6 +2,7 @@
 package com.slalombuild.projectman.usecase;
 
 import com.slalombuild.projectman.domain.repository.ProjectRepository;
+import com.slalombuild.projectman.usecase.model.GetAllProjectsResult;
 import com.slalombuild.projectman.usecase.model.ProjectMapper;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
