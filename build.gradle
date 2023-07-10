@@ -38,6 +38,9 @@ dependencies {
 	// Uncomment if you wish to use Docker Compose on local application startup
 	//developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
+	// Google Guava - using utility classes
+	implementation 'com.google.guava:guava:32.1.1-jre'
+
 	// Mock DB
 	implementation 'com.h2database:h2'
 

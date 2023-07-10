@@ -30,8 +30,11 @@ public class GetAllProjectsUseCaseTests {
     var actualResult = useCase.getAllProjects();
 
     // Assert
-    assertThat(actualResult).isNotNull();
     verify(projectRepository, atLeastOnce()).findAll();
+
+    assertThat(actualResult).isNotNull();
+    assertThat(actualResult.getProjects()).isNotEmpty();
+    assertThat(actualResult.getProjects().size()).isEqualTo(5);
   }
 
   @Test
@@ -45,9 +48,6 @@ public class GetAllProjectsUseCaseTests {
 
     // Assert
     verify(projectRepository, atLeastOnce()).findAll();
-    assertThat(actualResults).isNotNull();
-    assertThat(actualResults.getProjects()).isNotEmpty();
-    assertThat(actualResults.getProjects().size()).isEqualTo(1);
 
     var actualResult = actualResults.getProjects().get(0);
 

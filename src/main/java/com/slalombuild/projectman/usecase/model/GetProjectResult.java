@@ -6,6 +6,6 @@ import lombok.NonNull;
 import lombok.Value;
 
 @Value
-public class GetAllProjectsResult {
+public class GetProjectResult {
   @NonNull private List<ProjectViewModel> projects;
 }

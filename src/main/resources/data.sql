@@ -1,4 +1,4 @@
--- Test Data generated using mockaroo
+-- Test Data generated using mockaroo.com
 
 -- Markets
 INSERT INTO MARKET (id, name) VALUES (1, 'Seattle');

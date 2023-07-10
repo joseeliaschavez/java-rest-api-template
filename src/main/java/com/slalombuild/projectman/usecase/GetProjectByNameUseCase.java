@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class GetAllProjectsUseCase {
+public class GetProjectByNameUseCase {
   @NonNull private ProjectRepository projectRepository;
 
-  public GetProjectResult getAllProjects() {
-    var allProjects = projectRepository.findAll();
+  public GetProjectResult findByName(String name) {
+    var results = projectRepository.findFirst1ByNameStartingWith(name);
 
-    var viewModels = allProjects.stream().map(ProjectMapper.INSTANCE::toViewModel).toList();
+    var viewModels = results.stream().map(ProjectMapper.INSTANCE::toViewModel).toList();
 
-    return new GetProjectResult(viewModels);
+    return new GetProjectResult(viewModels); // TODO what if this is null?
   }
 }
