@@ -25,7 +25,6 @@ repositories {
 }
 
 ext {
-	guavaVersion = "32.1.1-jre"
 	mapstructVersion = "1.5.5.Final"
 }
 
