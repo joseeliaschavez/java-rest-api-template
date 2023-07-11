@@ -24,6 +24,10 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	mapstructVersion = "1.5.5.Final"
+}
+
 dependencies {
 	// Spring Dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
@@ -34,12 +38,20 @@ dependencies {
 	// Uncomment if you wish to use Docker Compose on local application startup
 	//developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
+	// Google Guava - using utility classes
+	implementation 'com.google.guava:guava:32.1.1-jre'
+
 	// Mock DB
 	implementation 'com.h2database:h2'
 
 	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Inter-Object Mapping
+	implementation "org.mapstruct:mapstruct:$mapstructVersion"
+	annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
+	testAnnotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
 
 	// Unit testing
 	testImplementation 'org.mockito:mockito-core:5.+'
