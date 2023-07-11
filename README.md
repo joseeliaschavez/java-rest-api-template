@@ -2,6 +2,12 @@
 
 A template showcasing best practices for implementing a REST API in Java SpringBoot.
 
+## Architecture
+
+This template uses clean architecture concepts to define package structure and class dependencies. It's enforced 
+using [ArchUnit](https://github.com/TNG/ArchUnit-Examples/blob/main/example-junit5/src/test/java/com/tngtech/archunit/exampletest/junit5/OnionArchitectureTest.java) 
+via a [unit test](./src/test/java/com/slalombuild/projectman/CleanArchitectureTests.java).
+
 This template attempts to use the [12-Factor App](https://www.redhat.com/architect/12-factor-app) guidelines to model 
 a scalable REST API in Java.
 
