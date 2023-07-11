@@ -18,9 +18,6 @@ configurations {
     integrationRuntime.extendsFrom testRuntime
 }
 
-dependencies {
-}
-
 tasks.register('integrationTest', Test) {
     description = 'Runs integration tests.'
     group = 'verification'
