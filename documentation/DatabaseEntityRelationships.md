@@ -1,3 +1,6 @@
+# Database Entity Relationships
+
+```mermaid
 ---
 title: ProjectMan ERD
 ---
@@ -28,3 +31,4 @@ erDiagram
         int id PK
         string name
     }
+```

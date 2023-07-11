@@ -2,10 +2,12 @@
 
 A template showcasing best practices for implementing a REST API in Java SpringBoot.
 
+This template attempts to use the [12-Factor App](https://www.redhat.com/architect/12-factor-app) guidelines to model 
+a scalable REST API in Java.
+
 ## Entity Relationships
 
-The entity relationships defined in this sample project are documented in the [erd.mermaid](./documentation/erd.mermaid)
-file. 
+The entity relationships defined in this sample project are documented in [an ERD diagram](./documentation/DatabaseEntityRelationships.md). 
 
 ## Integration Tests
 
@@ -16,7 +18,6 @@ and the source is found in `src/integration/java`.
 The tests run using SpringBoot extensions. They run using either `SpringBootTest` or `DataJpaTest`.
 
 To execute the integration tests, run the command
-
 ```bash
 ./gradlew integrationTest
 ```
