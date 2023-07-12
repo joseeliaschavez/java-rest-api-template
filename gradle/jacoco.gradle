@@ -6,9 +6,7 @@ jacoco {
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
     reports {
-        xml.required = false
-        csv.required = false
-        html.outputLocation = layout.buildDirectory.dir('jacoco')
+        xml.required = true
     }
     afterEvaluate { // (optional) : to exclude classes / packages from coverage
         classDirectories.from = files(classDirectories.files.collect {
@@ -18,7 +16,8 @@ jacocoTestReport {
                         'com/slalombuild/projectman/ProjectmanApplication.class',
                         'com/slalombuild/projectman/config/**',
                         'com/slalombuild/projectman/domain/entity/**',
-                        'com/slalombuild/projectman/domain/repository/**'
+                        'com/slalombuild/projectman/domain/repository/**',
+                        'com/slalombuild/projectman/usecase/model/**'
                     ]
             )
         })
