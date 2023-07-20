@@ -4,7 +4,7 @@ package com.slalombuild.movieman.usecase;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-import com.slalombuild.movieman.domain.entity.Project;
+import com.slalombuild.movieman.domain.entity.Cast;
 import com.slalombuild.movieman.domain.repository.ProjectRepository;
 import java.util.Collections;
 import org.instancio.Instancio;
@@ -15,7 +15,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class GetProjectByNameUseCaseTests {
+public class GetCastByNameUseCaseTests {
   @Mock private ProjectRepository projectRepository;
 
   @InjectMocks private GetProjectByNameUseCase useCase;
@@ -24,7 +24,7 @@ public class GetProjectByNameUseCaseTests {
   public void givenProjects_whenGetAllProjects_thenReturnList() {
     // Arrange
     var searchName = "Cross";
-    var expectedResult = Instancio.of(Project.class).create();
+    var expectedResult = Instancio.of(Cast.class).create();
     when(projectRepository.findFirst1ByNameStartingWith(searchName))
         .thenReturn(Collections.singletonList(expectedResult));
 

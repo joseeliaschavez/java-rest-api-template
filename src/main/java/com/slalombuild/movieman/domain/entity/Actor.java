@@ -10,13 +10,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Client {
+public class Actor {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
+  private String fullName;
+  private Long tmdbId;
 
-  @Enumerated(EnumType.STRING)
-  private Industry industry;
+  @ManyToOne
+  @JoinColumn(name = "projectId")
+  private Cast cast;
 }

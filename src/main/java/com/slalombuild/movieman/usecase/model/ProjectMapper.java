@@ -1,7 +1,7 @@
 /* (C) 2023 */
 package com.slalombuild.movieman.usecase.model;
 
-import com.slalombuild.movieman.domain.entity.Project;
+import com.slalombuild.movieman.domain.entity.Cast;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -12,5 +12,5 @@ public interface ProjectMapper {
 
   @Mapping(source = "project.client.name", target = "clientName")
   @Mapping(source = "project.market.name", target = "marketName")
-  ProjectViewModel toViewModel(Project project);
+  ProjectViewModel toViewModel(Cast cast);
 }

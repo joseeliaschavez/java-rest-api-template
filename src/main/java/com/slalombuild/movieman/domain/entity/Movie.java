@@ -3,6 +3,7 @@ package com.slalombuild.movieman.domain.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,20 +12,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Project {
+public class Movie {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String name;
-  private LocalDate startDate;
-  private LocalDate endDate;
+  private LocalDate releaseDate;
+  private Long tmdbId;
 
-  @ManyToOne
-  @JoinColumn(name = "clientId")
-  private Client client;
-
-  @ManyToOne
-  @JoinColumn(name = "marketId")
-  private Market market;
+  @OneToMany(mappedBy = "movie")
+  private Set<Cast> cast;
 }

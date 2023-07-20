@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
     classes = MoviemanApplication.class)
 @AutoConfigureMockMvc
 @ActiveProfiles("test") // TODO why is application-test.yaml not loading?
-public class ProjectControllerIntegrationTests {
+public class CastControllerIntegrationTests {
   @Autowired private MockMvc mockMvc;
 
   @Test

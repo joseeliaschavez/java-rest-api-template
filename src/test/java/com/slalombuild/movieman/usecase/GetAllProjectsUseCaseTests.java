@@ -4,7 +4,7 @@ package com.slalombuild.movieman.usecase;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-import com.slalombuild.movieman.domain.entity.Project;
+import com.slalombuild.movieman.domain.entity.Cast;
 import com.slalombuild.movieman.domain.repository.ProjectRepository;
 import java.util.Collections;
 import org.instancio.Instancio;
@@ -23,7 +23,7 @@ public class GetAllProjectsUseCaseTests {
   @Test
   public void givenProjects_whenGetAllProjects_thenReturnList() {
     // Arrange
-    var expectedResults = Instancio.ofList(Project.class).size(5).create();
+    var expectedResults = Instancio.ofList(Cast.class).size(5).create();
     when(projectRepository.findAll()).thenReturn(expectedResults);
 
     // Act
@@ -40,7 +40,7 @@ public class GetAllProjectsUseCaseTests {
   @Test
   public void givenProjects_whenGetAllProjects_thenMappingIsCorrect() {
     // Arrange
-    var expectedResult = Instancio.of(Project.class).create();
+    var expectedResult = Instancio.of(Cast.class).create();
     when(projectRepository.findAll()).thenReturn(Collections.singletonList(expectedResult));
 
     // Act
@@ -55,7 +55,7 @@ public class GetAllProjectsUseCaseTests {
     assertThat(actualResult.getName()).isEqualTo(expectedResult.getName());
     assertThat(actualResult.getStartDate()).isEqualTo(expectedResult.getStartDate());
     assertThat(actualResult.getEndDate()).isEqualTo(expectedResult.getEndDate());
-    assertThat(actualResult.getClientName()).isEqualTo(expectedResult.getClient().getName());
+    assertThat(actualResult.getClientName()).isEqualTo(expectedResult.getMovie().getName());
     assertThat(actualResult.getMarketName()).isEqualTo(expectedResult.getMarket().getName());
   }
 }
