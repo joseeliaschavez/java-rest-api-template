@@ -4,7 +4,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: projectman
+      POSTGRES_USER: movieman
       POSTGRES_PASSWORD: mayonnaise1
   adminer:
     image: adminer
