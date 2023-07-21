@@ -1,4 +1,4 @@
--- Test Data generated using mockaroo.com
+-- Test Data generated using mockaroo.com, TMDB API
 
 -- Movies
 insert into MOVIE (id, title, release_date, tmdb_id) values (1, 'The Matrix', '1999-03-30', 603);

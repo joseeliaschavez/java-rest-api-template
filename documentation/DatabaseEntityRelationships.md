@@ -5,24 +5,24 @@
 title: MovieMan ERD
 ---
 erDiagram
-    MOVIE ||--|{ CAST : has
+    MOVIE ||--|{ MOVIE_CAST : has
     MOVIE {
         int id PK
-        string name
-        date releaseDate
-        int tmdbId
+        string title
+        date release_date
+        int tmdb_id
     }
-    CAST ||--|{ ACTOR: is
-    CAST {
-        int id PK
-        string characterName
-        int movieId FK
-        int actorId FK
-        int tmdbId
-    }
+    ACTOR ||--|{ MOVIE_CAST: has
     ACTOR {
         int id PK
-        string name
-        int tmdbId
+        string full_name
+        int tmdb_id
+    }
+    MOVIE_CAST {
+        int id PK
+        string character_name
+        int movie_id FK
+        int actor_id FK
+        string tmdb_credit_id
     }
 ```
