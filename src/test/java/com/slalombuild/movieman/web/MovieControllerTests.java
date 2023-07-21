@@ -17,7 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class CastControllerTests {
+public class MovieControllerTests {
   @Mock private GetAllMoviesUseCase getAllMoviesUseCase;
   @Mock private GetMovieByNameUseCase getMovieByNameUseCase;
 
