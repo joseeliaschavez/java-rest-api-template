@@ -2,6 +2,7 @@
 package com.slalombuild.movieman.domain.entity;
 
 import jakarta.persistence.*;
+import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,6 @@ public class Actor {
   private String fullName;
   private Long tmdbId;
 
-  @ManyToOne
-  @JoinColumn(name = "projectId")
-  private Cast cast;
+  @OneToMany(mappedBy = "actor")
+  private Set<Cast> cast;
 }

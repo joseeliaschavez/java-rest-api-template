@@ -41,7 +41,8 @@ public class GetAllMoviesUseCaseTests {
   @Test
   public void givenMovies_whenGetAllMovies_thenMappingIsCorrect() {
     // Arrange
-    var expectedResult = Instancio.of(Movie.class)
+    var expectedResult =
+        Instancio.of(Movie.class)
             .generate(field(Movie::getCast), gen -> gen.collection().size(1))
             .create();
     when(movieRepository.findAll()).thenReturn(Collections.singletonList(expectedResult));
