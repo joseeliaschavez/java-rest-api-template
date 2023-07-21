@@ -13,9 +13,9 @@ jacocoTestReport {
             fileTree(
                     dir: it,
                     exclude: [
-                        'com/slalombuild/movieman/ProjectmanApplication.class',
+                        'com/slalombuild/movieman/MoviemanApplication.class',
                         'com/slalombuild/movieman/config/**',
-                        'com/slalombuild/movieman/domain/entity/**',
+                        'com/slalombuild/movieman/domain/entity/**',\
                         'com/slalombuild/movieman/domain/repository/**',
                         'com/slalombuild/movieman/usecase/model/**'
                     ]
