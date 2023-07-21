@@ -3,7 +3,7 @@ package com.slalombuild.movieman.domain.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +21,10 @@ public class Movie {
   private LocalDate releaseDate;
   private Long tmdbId;
 
-  @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
-  private Set<Cast> cast;
+  @OneToMany(
+      mappedBy = "movie",
+      cascade = CascadeType.ALL,
+      fetch = FetchType.LAZY,
+      orphanRemoval = true)
+  private List<Cast> cast;
 }

@@ -19,11 +19,9 @@ public class Cast {
   private String characterName;
   private String tmdbCreditId;
 
-  @ManyToOne
-  @JoinColumn(name = "movie_id")
+  @ManyToOne(fetch = FetchType.LAZY)
   private Movie movie;
 
-  @ManyToOne
-  @JoinColumn(name = "actor_id")
+  @ManyToOne(fetch = FetchType.LAZY)
   private Actor actor;
 }
