@@ -36,3 +36,6 @@ lib/
 
 ### VS Code ###
 .vscode/
+
+### ENV files ###
+.env
