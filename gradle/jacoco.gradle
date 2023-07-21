@@ -13,11 +13,11 @@ jacocoTestReport {
             fileTree(
                     dir: it,
                     exclude: [
-                        'com/slalombuild/projectman/ProjectmanApplication.class',
-                        'com/slalombuild/projectman/config/**',
-                        'com/slalombuild/projectman/domain/entity/**',
-                        'com/slalombuild/projectman/domain/repository/**',
-                        'com/slalombuild/projectman/usecase/model/**'
+                        'com/slalombuild/movieman/MoviemanApplication.class',
+                        'com/slalombuild/movieman/config/**',
+                        'com/slalombuild/movieman/domain/entity/**',\
+                        'com/slalombuild/movieman/domain/repository/**',
+                        'com/slalombuild/movieman/usecase/model/**'
                     ]
             )
         })

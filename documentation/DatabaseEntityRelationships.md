@@ -2,33 +2,27 @@
 
 ```mermaid
 ---
-title: ProjectMan ERD
+title: MovieMan ERD
 ---
 erDiagram
-    CLIENT ||--o{ PROJECT : has
-    CLIENT {
+    MOVIE ||--|{ MOVIE_CAST : has
+    MOVIE {
         int id PK
-        string name
+        string title
+        date release_date
+        int tmdb_id
     }
-    PROJECT {
+    ACTOR ||--|{ MOVIE_CAST: has
+    ACTOR {
         int id PK
-        string name
-        int clientId FK
-        int marketId FK
+        string full_name
+        int tmdb_id
     }
-    PROJECT ||--o{ CONSULTANT : assigned
-    CONSULTANT {
+    MOVIE_CAST {
         int id PK
-        string firstName
-        string lastName
-        string capability
-        int marketId FK
-        int statementOfWorkId FK
-    }
-    CONSULTANT ||--|| MARKET : within
-    PROJECT ||--|| MARKET : within
-    MARKET {
-        int id PK
-        string name
+        string character_name
+        int movie_id FK
+        int actor_id FK
+        string tmdb_credit_id
     }
 ```
