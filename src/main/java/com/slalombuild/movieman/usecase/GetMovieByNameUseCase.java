@@ -14,7 +14,7 @@ public class GetMovieByNameUseCase {
   @NonNull private MovieRepository movieRepository;
 
   public GetMoviesResult findByName(String name) {
-    var movies = movieRepository.findFirst1ByNameStartingWith(name);
+    var movies = movieRepository.findFirst1ByTitleStartingWith(name);
 
     var viewModels = movies.stream().map(MovieMapper.INSTANCE::toMovieModel).toList();
 

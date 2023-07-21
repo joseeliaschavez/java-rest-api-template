@@ -17,13 +17,13 @@ public class Cast {
   private Long id;
 
   private String characterName;
-  private Long tmdbId;
+  private String tmdbCreditId;
 
   @ManyToOne
-  @JoinColumn(name = "movieId")
+  @JoinColumn(name = "movie_id")
   private Movie movie;
 
   @ManyToOne
-  @JoinColumn(name = "actorId")
+  @JoinColumn(name = "actor_id")
   private Actor actor;
 }

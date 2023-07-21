@@ -6,5 +6,5 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MovieRepository extends JpaRepository<Movie, Long> {
-  List<Movie> findFirst1ByNameStartingWith(String prefix);
+  List<Movie> findFirst1ByTitleStartingWith(String prefix);
 }

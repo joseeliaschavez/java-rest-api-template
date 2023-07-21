@@ -8,7 +8,7 @@ import lombok.Value;
 @Value
 public class MovieResultModel {
   long id;
-  String name;
+  String title;
   LocalDate releaseDate;
   List<CastResultModel> cast;
 }

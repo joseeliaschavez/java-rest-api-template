@@ -56,7 +56,7 @@ public class GetAllMoviesUseCaseTests {
     var actualResult = actualResults.getMovies().get(0);
 
     assertThat(actualResult.getId()).isEqualTo(expectedResult.getId());
-    assertThat(actualResult.getName()).isEqualTo(expectedResult.getName());
+    assertThat(actualResult.getTitle()).isEqualTo(expectedResult.getTitle());
     assertThat(actualResult.getReleaseDate()).isEqualTo(expectedResult.getReleaseDate());
     assertThat(actualResult.getCast()).isNotNull();
     assertThat(actualResult.getCast()).isNotEmpty();

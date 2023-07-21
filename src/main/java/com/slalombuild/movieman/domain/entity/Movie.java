@@ -17,10 +17,10 @@ public class Movie {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
+  private String title;
   private LocalDate releaseDate;
   private Long tmdbId;
 
-  @OneToMany(mappedBy = "movie")
+  @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
   private Set<Cast> cast;
 }

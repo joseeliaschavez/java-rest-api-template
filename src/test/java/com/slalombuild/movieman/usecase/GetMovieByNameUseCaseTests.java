@@ -23,16 +23,16 @@ public class GetMovieByNameUseCaseTests {
   @Test
   public void givenMovies_whenGetAllMovies_thenReturnList() {
     // Arrange
-    var searchName = "Cross";
+    var searchName = "Ghost";
     var expectedResult = Instancio.of(Movie.class).create();
-    when(movieRepository.findFirst1ByNameStartingWith(searchName))
+    when(movieRepository.findFirst1ByTitleStartingWith(searchName))
         .thenReturn(Collections.singletonList(expectedResult));
 
     // Act
     var actualResult = useCase.findByName(searchName);
 
     // Assert
-    verify(movieRepository, atLeastOnce()).findFirst1ByNameStartingWith(searchName);
+    verify(movieRepository, atLeastOnce()).findFirst1ByTitleStartingWith(searchName);
 
     assertThat(actualResult).isNotNull();
     assertThat(actualResult.getMovies()).isNotEmpty();

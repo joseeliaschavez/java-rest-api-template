@@ -28,15 +28,15 @@ public class MovieControllerIntegrationTests {
         .perform(get("/movies").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.projects[0].name", containsString("Cross-platform")));
+        .andExpect(jsonPath("$.movies[0].title", containsString("Matrix")));
   }
 
   @Test
   public void givenMovies_whenGetMovieByName_ThenStatus200() throws Exception {
     mockMvc
-        .perform(get("/movies?name=Cross").contentType(MediaType.APPLICATION_JSON))
+        .perform(get("/movies?name=Ghost").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.projects[0].name", containsString("Cross-platform")));
+        .andExpect(jsonPath("$.movies[0].title", containsString("Ghost")));
   }
 }
