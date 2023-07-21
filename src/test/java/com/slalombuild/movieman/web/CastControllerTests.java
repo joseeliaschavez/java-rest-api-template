@@ -4,10 +4,10 @@ package com.slalombuild.movieman.web;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
-import com.slalombuild.movieman.usecase.GetAllProjectsUseCase;
-import com.slalombuild.movieman.usecase.GetProjectByNameUseCase;
-import com.slalombuild.movieman.usecase.model.GetProjectResult;
-import com.slalombuild.movieman.usecase.model.ProjectViewModel;
+import com.slalombuild.movieman.usecase.GetAllMoviesUseCase;
+import com.slalombuild.movieman.usecase.GetMovieByNameUseCase;
+import com.slalombuild.movieman.usecase.model.GetMoviesResult;
+import com.slalombuild.movieman.usecase.model.MovieResultModel;
 import java.util.Collections;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
@@ -18,38 +18,38 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class CastControllerTests {
-  @Mock private GetAllProjectsUseCase getAllProjectsUseCase;
-  @Mock private GetProjectByNameUseCase getProjectByNameUseCase;
+  @Mock private GetAllMoviesUseCase getAllMoviesUseCase;
+  @Mock private GetMovieByNameUseCase getMovieByNameUseCase;
 
-  @InjectMocks private ProjectController controller;
+  @InjectMocks private MovieController controller;
 
   @Test
-  public void givenProjects_whenGetProjects_thenCallsService() {
+  public void givenMovies_whenGetMovies_thenCallsService() {
     // Arrange
     var expectedResults =
-        new GetProjectResult(Instancio.ofList(ProjectViewModel.class).size(5).create());
-    when(getAllProjectsUseCase.getAllProjects()).thenReturn(expectedResults);
+        new GetMoviesResult(Instancio.ofList(MovieResultModel.class).size(5).create());
+    when(getAllMoviesUseCase.getAllMovies()).thenReturn(expectedResults);
 
     // Act
-    var actualResult = controller.getProjects(null);
+    var actualResult = controller.getMovies(null);
 
     // Assert
     assertThat(actualResult).isNotNull();
-    verify(getAllProjectsUseCase, atLeastOnce()).getAllProjects();
+    verify(getAllMoviesUseCase, atLeastOnce()).getAllMovies();
   }
 
   @Test
-  public void givenProjects_whenGetProjectByName_thenCallsService() {
+  public void givenMovies_whenGetMovieByName_thenCallsService() {
     // Arrange
-    var expectedResult = Instancio.of(ProjectViewModel.class).create();
-    when(getProjectByNameUseCase.findByName(anyString()))
-        .thenReturn(new GetProjectResult(Collections.singletonList(expectedResult)));
+    var expectedResult = Instancio.of(MovieResultModel.class).create();
+    when(getMovieByNameUseCase.findByName(anyString()))
+        .thenReturn(new GetMoviesResult(Collections.singletonList(expectedResult)));
 
     // Act
-    var actualResult = controller.getProjects("Cross");
+    var actualResult = controller.getMovies("Cross");
 
     // Assert
     assertThat(actualResult).isNotNull();
-    verify(getProjectByNameUseCase, atLeastOnce()).findByName("Cross");
+    verify(getMovieByNameUseCase, atLeastOnce()).findByName("Cross");
   }
 }

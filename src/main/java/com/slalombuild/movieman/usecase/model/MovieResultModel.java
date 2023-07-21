@@ -2,14 +2,13 @@
 package com.slalombuild.movieman.usecase.model;
 
 import java.time.LocalDate;
+import java.util.List;
 import lombok.Value;
 
 @Value
-public class ProjectViewModel {
+public class MovieResultModel {
   long id;
   String name;
-  LocalDate startDate;
-  LocalDate endDate;
-  String clientName;
-  String marketName;
+  LocalDate releaseDate;
+  List<CastResultModel> cast;
 }
