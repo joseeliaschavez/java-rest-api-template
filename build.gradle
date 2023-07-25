@@ -58,6 +58,9 @@ dependencies {
 
 	// Arch Unit
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.0.1'
+
+	// Wiremock
+	testImplementation "com.github.tomakehurst:wiremock-standalone:3.0.0-beta-8"
 }
 
 tasks.named('test') {
@@ -71,4 +74,8 @@ jacocoTestReport {
 
 bootRun {
 	args = ["--spring.profiles.active=local"]
+}
+
+tasks.named("processIntegrationResources", Copy) {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

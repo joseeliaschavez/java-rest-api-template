@@ -39,3 +39,6 @@ lib/
 
 ### ENV files ###
 .env
+
+### Wiremock JAR ###
+wiremock*.jar

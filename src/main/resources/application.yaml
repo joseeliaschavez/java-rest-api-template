@@ -22,3 +22,13 @@ tmdb:
   base-url: https://api.themoviedb.org/3
   authorization-token: ${TMDB_API_TOKEN}
   timeout: 5000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: integration
+
+tmdb:
+  base-url: http://localhost:9080
+  authorization-token: some_bad_token
