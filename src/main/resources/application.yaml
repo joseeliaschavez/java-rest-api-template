@@ -18,8 +18,7 @@ spring:
     username: movieman
     password:
 
-rest-services:
-  tmdb:
-    base-url: https://api.themoviedb.org
-    auth-token: ${TMDB_API_TOKEN}
-    timeout: 5000
+tmdb:
+  base-url: https://api.themoviedb.org/3
+  authorization-token: ${TMDB_API_TOKEN}
+  timeout: 5000

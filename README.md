@@ -11,6 +11,16 @@ via a [unit test](./src/test/java/com/slalombuild/movieman/CleanArchitectureTest
 This template attempts to use the [12-Factor App](https://www.redhat.com/architect/12-factor-app) guidelines to model 
 a scalable REST API in Java.
 
+### Constructor vs. Field Dependency Injection
+
+There are strong opinions on using constructor injection over field injection. Constructor injection is generally 
+considered a better practice for dependency injection, as it makes the dependencies explicit and allows for 
+easier testing and immutability.
+
+For this template, we've chosen to use field injection to leverage Lombok's auto constructor generation. We added a 
+[config rule](./lombok.config) to tell Lombok to copy desired annotations on the private fields to the constructor 
+on code generation.
+
 ## Entity Relationships
 
 The entity relationships defined in this sample project are documented in [an ERD diagram](./documentation/DatabaseEntityRelationships.md). 
