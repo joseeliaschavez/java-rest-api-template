@@ -34,6 +34,8 @@ jobs:
         arguments: test
     - name: Run Integration Tests
       uses: gradle/gradle-build-action@v2
+      env:
+        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
       with:
         gradle-version: wrapper
         arguments: integrationTest
