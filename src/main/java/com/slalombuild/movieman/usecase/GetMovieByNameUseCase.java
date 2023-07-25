@@ -2,7 +2,7 @@
 package com.slalombuild.movieman.usecase;
 
 import com.slalombuild.movieman.domain.repository.MovieRepository;
-import com.slalombuild.movieman.tmdb.TmdbMovieRepository;
+import com.slalombuild.movieman.domain.repository.PublicMovieRepository;
 import com.slalombuild.movieman.usecase.model.GetMoviesResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class GetMovieByNameUseCase {
   private final MovieMapper movieMapper;
   private final MovieRepository movieRepository;
-  private final TmdbMovieRepository tmdbMovieRepository;
+  private final PublicMovieRepository publicMovieRepository;
 
   public GetMoviesResult findByName(String name) {
     var movies = movieRepository.findFirst1ByTitleContaining(name);
@@ -24,7 +24,7 @@ public class GetMovieByNameUseCase {
             .peek(
                 movie -> {
                   if (movie.getTmdbId() != null) {
-                    var tmdbMovie = tmdbMovieRepository.fetchMovieDetails(movie.getTmdbId());
+                    var tmdbMovie = publicMovieRepository.fetchMovieDetails(movie.getTmdbId());
                     log.info(String.format("TMDB Result: %s", tmdbMovie.toString()));
                   }
                 })

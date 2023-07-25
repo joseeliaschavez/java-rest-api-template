@@ -7,6 +7,7 @@ import static org.mockito.Mockito.*;
 
 import com.slalombuild.movieman.domain.entity.Movie;
 import com.slalombuild.movieman.domain.repository.MovieRepository;
+import com.slalombuild.movieman.domain.repository.PublicMovieRepository;
 import com.slalombuild.movieman.usecase.model.MovieResultModel;
 import java.util.Collections;
 import org.instancio.Instancio;
@@ -20,6 +21,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class GetMovieByNameUseCaseTests {
   @Mock private MovieMapper movieMapper;
   @Mock private MovieRepository movieRepository;
+  @Mock private PublicMovieRepository publicMovieRepository;
   @InjectMocks private GetMovieByNameUseCase useCase;
 
   @Test
