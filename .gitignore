@@ -36,3 +36,9 @@ lib/
 
 ### VS Code ###
 .vscode/
+
+### ENV files ###
+.env
+
+### Wiremock JAR ###
+wiremock*.jar

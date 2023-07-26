@@ -4,7 +4,6 @@ package com.slalombuild.movieman.web;
 import com.slalombuild.movieman.usecase.GetAllMoviesUseCase;
 import com.slalombuild.movieman.usecase.GetMovieByNameUseCase;
 import com.slalombuild.movieman.usecase.model.GetMoviesResult;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/movies")
 @RequiredArgsConstructor
 public class MovieController {
-  @NonNull private GetAllMoviesUseCase getAllMoviesUseCase;
-  @NonNull private GetMovieByNameUseCase getMovieByNameUseCase;
+  private final GetAllMoviesUseCase getAllMoviesUseCase;
+  private final GetMovieByNameUseCase getMovieByNameUseCase;
 
   @GetMapping
   public GetMoviesResult getMovies(@RequestParam(required = false) @Nullable String name) {

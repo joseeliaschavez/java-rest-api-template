@@ -17,3 +17,17 @@ spring:
     url: jdbc:h2:mem:devdb
     username: movieman
     password:
+
+tmdb:
+  base-url: https://api.themoviedb.org/3
+  authorization-token: ${TMDB_API_TOKEN:dummytoken}
+  timeout: 5000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: integration
+
+tmdb:
+  base-url: http://localhost:9080

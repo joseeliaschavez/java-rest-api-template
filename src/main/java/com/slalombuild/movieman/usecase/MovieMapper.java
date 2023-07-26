@@ -1,16 +1,16 @@
 /* (C) 2023 */
-package com.slalombuild.movieman.usecase.model;
+package com.slalombuild.movieman.usecase;
 
 import com.slalombuild.movieman.domain.entity.Cast;
 import com.slalombuild.movieman.domain.entity.Movie;
+import com.slalombuild.movieman.usecase.model.CastResultModel;
+import com.slalombuild.movieman.usecase.model.MovieResultModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
+import org.mapstruct.MappingConstants;
 
-@Mapper
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface MovieMapper {
-  MovieMapper INSTANCE = Mappers.getMapper(MovieMapper.class);
-
   MovieResultModel toMovieModel(Movie movie);
 
   @Mapping(source = "cast.actor.fullName", target = "actorName")

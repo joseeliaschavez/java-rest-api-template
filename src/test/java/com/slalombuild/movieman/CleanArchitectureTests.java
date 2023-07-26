@@ -15,5 +15,6 @@ public class CleanArchitectureTests {
           .domainModels("..domain.entity..")
           .domainServices("..domain.repository..")
           .applicationServices("..usecase..")
+          .adapter("http", "..tmdb..")
           .adapter("rest", "..web..");
 }

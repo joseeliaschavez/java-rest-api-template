@@ -7,6 +7,7 @@ import static org.mockito.Mockito.*;
 
 import com.slalombuild.movieman.domain.entity.Movie;
 import com.slalombuild.movieman.domain.repository.MovieRepository;
+import com.slalombuild.movieman.usecase.model.MovieResultModel;
 import java.util.Collections;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
@@ -17,8 +18,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class GetAllMoviesUseCaseTests {
+  @Mock private MovieMapper movieMapper;
   @Mock private MovieRepository movieRepository;
-
   @InjectMocks private GetAllMoviesUseCase useCase;
 
   @Test
@@ -26,6 +27,8 @@ public class GetAllMoviesUseCaseTests {
     // Arrange
     var expectedResults = Instancio.ofList(Movie.class).size(5).create();
     when(movieRepository.findAll()).thenReturn(expectedResults);
+    when(movieMapper.toMovieModel(any(Movie.class)))
+        .thenReturn(Instancio.of(MovieResultModel.class).create());
 
     // Act
     var actualResult = useCase.getAllMovies();
@@ -52,19 +55,6 @@ public class GetAllMoviesUseCaseTests {
 
     // Assert
     verify(movieRepository, atLeastOnce()).findAll();
-
-    var actualResult = actualResults.getMovies().get(0);
-
-    assertThat(actualResult.getId()).isEqualTo(expectedResult.getId());
-    assertThat(actualResult.getTitle()).isEqualTo(expectedResult.getTitle());
-    assertThat(actualResult.getReleaseDate()).isEqualTo(expectedResult.getReleaseDate());
-    assertThat(actualResult.getCast()).isNotNull();
-    assertThat(actualResult.getCast()).isNotEmpty();
-
-    var expectedCast = expectedResult.getCast().iterator().next();
-    var actualCast = actualResult.getCast().get(0);
-
-    assertThat(actualCast.getActorName()).isEqualTo(expectedCast.getActor().getFullName());
-    assertThat(actualCast.getCharacterName()).isEqualTo(expectedCast.getCharacterName());
+    assertThat(actualResults).isNotNull();
   }
 }
