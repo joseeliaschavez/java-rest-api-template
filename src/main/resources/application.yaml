@@ -20,7 +20,7 @@ spring:
 
 tmdb:
   base-url: https://api.themoviedb.org/3
-  authorization-token: ${TMDB_API_TOKEN}
+  authorization-token: ${TMDB_API_TOKEN:dummytoken}
   timeout: 5000
 
 ---
@@ -31,4 +31,3 @@ spring:
 
 tmdb:
   base-url: http://localhost:9080
-  authorization-token: some_bad_token

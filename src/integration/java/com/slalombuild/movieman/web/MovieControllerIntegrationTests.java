@@ -11,13 +11,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
 import com.slalombuild.movieman.MoviemanApplication;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
@@ -39,16 +39,6 @@ public final class MovieControllerIntegrationTests {
                   .usingFilesUnderDirectory("src/integration/resources/wiremock"))
           .build();
 
-  @BeforeEach
-  public void beforeEach() {
-    wireMock.stubFor(
-        WireMock.get((urlPathMatching("/movie/[0-9]*")))
-            .willReturn(
-                aResponse()
-                    .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                    .withBodyFile("movie_603.json")));
-  }
-
   @Test
   public void givenMovies_whenGetMovies_ThenStatus200() throws Exception {
     mockMvc
@@ -60,6 +50,13 @@ public final class MovieControllerIntegrationTests {
 
   @Test
   public void givenMovies_whenGetMovieByName_ThenStatus200() throws Exception {
+    wireMock.stubFor(
+        WireMock.get((urlPathMatching("/movie/[0-9]*")))
+            .willReturn(
+                aResponse()
+                    .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                    .withStatus(HttpStatus.OK.value())
+                    .withBodyFile("movie_603.json")));
     mockMvc
         .perform(get("/movies?name=Matrix").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
