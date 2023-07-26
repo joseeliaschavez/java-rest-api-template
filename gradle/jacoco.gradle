@@ -13,7 +13,7 @@ jacocoTestReport {
                     dir: it,
                     exclude: [
                         'com/slalombuild/movieman/MoviemanApplication.class',
-                        'com/slalombuild/movieman/config/**/*Exception.class',
+                        'com/slalombuild/movieman/**/*Exception.*',
                         'com/slalombuild/movieman/config/**',
                         'com/slalombuild/movieman/domain/entity/**',\
                         'com/slalombuild/movieman/domain/repository/**',
