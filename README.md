@@ -13,7 +13,24 @@ using [ArchUnit](https://github.com/TNG/ArchUnit-Examples/blob/main/example-juni
 via a [unit test](./src/test/java/com/slalombuild/movieman/CleanArchitectureTests.java).
 
 This template attempts to use the [12-Factor App](https://www.redhat.com/architect/12-factor-app) guidelines to model 
-a scalable REST API in Java.
+a scalable REST API in Java. Those guidelines are:
+
+1. One codebase, one application 
+2. Dependency management 
+3. Design, build, release, and run 
+4. Configuration, credentials, and code 
+5. Logs 
+6. Disposability 
+7. Backing services 
+8. Environment parity 
+9. Administrative processes 
+10. Port binding 
+11. Stateless processes 
+12. Concurrency
+
+There is also the [15-Factor App](https://developer.ibm.com/articles/15-factor-applications/)
+guidelines to be considered, which introduces _API First_, _Telemetry_, and _Auth/Authz_ as additional 
+factors.
 
 ### Constructor vs. Field Dependency Injection
 
@@ -21,8 +38,8 @@ There are strong opinions on using constructor injection over field injection. C
 considered a better practice for dependency injection, as it makes the dependencies explicit and allows for 
 easier testing and immutability.
 
-For this template, we've chosen to use field injection to leverage Lombok's auto constructor generation. We added a 
-[config rule](./lombok.config) to tell Lombok to copy desired annotations on the private fields to the constructor 
+For this template, we're using constructor injection by leveraging Lombok's auto constructor generation. We added a 
+[config rule](./lombok.config) telling Lombok to copy desired annotations from the private fields to the constructor 
 on code generation.
 
 ## Entity Relationships
