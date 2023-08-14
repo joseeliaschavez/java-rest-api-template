@@ -30,22 +30,25 @@ ext {
 
 dependencies {
 	// Spring Dependencies
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.1.+'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.+'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.1.+'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.+'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.1.+'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.+'
 
 	// Uncomment if you wish to use Docker Compose on local application startup
 	//developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
+
+	// OpenAPI Auto-Generated Documentation
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.+'
 
 	// Mock DB
 	implementation 'com.h2database:h2'
 
 	// Lombok
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok:1.18.+'
+	annotationProcessor 'org.projectlombok:lombok:1.18.+'
 
 	// Inter-Object Mapping
 	implementation "org.mapstruct:mapstruct:$mapstructVersion"
@@ -55,7 +58,7 @@ dependencies {
 	// Unit testing
 	testImplementation 'org.mockito:mockito-core:5.+'
 	testImplementation 'org.instancio:instancio-junit:2.+' // Creating test fixtures
-	testImplementation 'com.squareup.okhttp3:mockwebserver:4.11.0' // Mocking WebClient calls
+	testImplementation 'com.squareup.okhttp3:mockwebserver:4.11.+' // Mocking WebClient calls
 
 	// Arch Unit
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.0.1'
