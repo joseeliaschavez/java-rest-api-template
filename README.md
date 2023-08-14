@@ -11,8 +11,8 @@ an open movie dataset ([TMDB API](https://developer.themoviedb.org/docs)).
 OpenAPI documentation has been enabled via Spring-Docs. On application startup, you can browse the documentation
 by the following links:
 
-OpenAPI 3.0 Spec: http://localhost:8080/v3/api-docs
-Swagger UI: http://localhost:8080/swagger-ui/index.html
+- OpenAPI 3.0 Spec: http://localhost:8080/v3/api-docs
+- Swagger UI: http://localhost:8080/swagger-ui/index.html
 
 Note: The dependency `implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'` will also support OpenAPI documentation. But it cannot be mixed with the starter dependency.
 
