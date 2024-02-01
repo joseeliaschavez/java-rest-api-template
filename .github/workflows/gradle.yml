@@ -28,12 +28,12 @@ jobs:
         java-version: '17'
         distribution: 'zulu'
     - name: Build and Unit Test with Gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
       with:
         gradle-version: wrapper
         arguments: test
     - name: Run Integration Tests
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@v3
       env:
         TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
       with:
