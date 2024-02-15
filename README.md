@@ -20,7 +20,7 @@ Note: The dependency `implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'`
 
 This template uses clean architecture concepts to define package structure and class dependencies. It's enforced 
 using [ArchUnit](https://github.com/TNG/ArchUnit-Examples/blob/main/example-junit5/src/test/java/com/tngtech/archunit/exampletest/junit5/OnionArchitectureTest.java) 
-via a [unit test](./src/test/java/com/slalombuild/movieman/CleanArchitectureTests.java).
+via a [unit test](./src/test/java/com/rangerforge/movieman/CleanArchitectureTests.java).
 
 This template attempts to use the [12-Factor App](https://www.redhat.com/architect/12-factor-app) guidelines to model 
 a scalable REST API in Java. Those guidelines are:
@@ -73,7 +73,7 @@ To execute the integration tests, run the command
 
 Wiremock is mocking TMDB API responses for integration tests. 
 - The stub files can be found in `src/integration/resources/wiremock`.
-- The test class [MovieControllerIntegrationTests](./src/integration/java/com/slalombuild/movieman/web/MovieControllerIntegrationTests.java)
+- The test class [MovieControllerIntegrationTests](./src/integration/java/com/rangerforge/movieman/web/MovieControllerIntegrationTests.java)
 configures an in-memory Wiremock server using [a JUnit extension](https://wiremock.org/docs/junit-jupiter/#advanced-usage---programmatic).
 - Normally, Wiremock looks for stub files in `src/test/resources` but this project has a different directory structure; therefore 
 we've overwritten the default path in the extension.

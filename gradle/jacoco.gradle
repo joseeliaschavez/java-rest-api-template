@@ -1,5 +1,5 @@
 jacoco {
-    toolVersion = "0.8.8"
+    toolVersion = "0.8.11"
 }
 
 jacocoTestReport {
@@ -12,13 +12,13 @@ jacocoTestReport {
             fileTree(
                     dir: it,
                     exclude: [
-                        'com/slalombuild/movieman/MoviemanApplication.class',
-                        'com/slalombuild/movieman/**/*Exception.*',
-                        'com/slalombuild/movieman/config/**',
-                        'com/slalombuild/movieman/domain/entity/**',\
-                        'com/slalombuild/movieman/domain/repository/**',
-                        'com/slalombuild/movieman/tmdb/model/**',
-                        'com/slalombuild/movieman/usecase/model/**'
+                        'com/rangerforge/movieman/MoviemanApplication.class',
+                        'com/rangerforge/movieman/**/*Exception.*',
+                        'com/rangerforge/movieman/config/**',
+                        'com/rangerforge/movieman/domain/entity/**',\
+                        'com/rangerforge/movieman/domain/repository/**',
+                        'com/rangerforge/movieman/tmdb/model/**',
+                        'com/rangerforge/movieman/usecase/model/**'
                     ]
             )
         })
