@@ -52,3 +52,5 @@ jobs:
         title: 'JaCoCo Report'
         min-coverage-overall: 40
         min-coverage-changed-files: 60
+        pass-emoji: ':white_check_mark:'
+        fail-emoji: ':x:'
