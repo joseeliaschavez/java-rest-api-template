@@ -11,8 +11,9 @@ apply from: 'gradle/jacoco.gradle'
 apply from: 'gradle/integration.gradle'
 
 group = 'com.rangerforge'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.0-SNAPSHOT'
 sourceCompatibility = '21'
+targetCompatibility = '21'
 
 configurations {
 	compileOnly {
