@@ -11,8 +11,9 @@ apply from: 'gradle/jacoco.gradle'
 apply from: 'gradle/integration.gradle'
 
 group = 'com.rangerforge'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.0-SNAPSHOT'
 sourceCompatibility = '21'
+targetCompatibility = '21'
 
 configurations {
 	compileOnly {
@@ -63,7 +64,7 @@ dependencies {
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
 
 	// Wiremock
-	testImplementation 'com.github.tomakehurst:wiremock-standalone:3.0.1'
+	testImplementation 'org.wiremock:wiremock-standalone:3.4.1'
 }
 
 tasks.named('test') {
