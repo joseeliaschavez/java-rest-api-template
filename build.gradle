@@ -63,7 +63,7 @@ dependencies {
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
 
 	// Wiremock
-	testImplementation 'com.github.tomakehurst:wiremock-standalone:3.0.1'
+	testImplementation 'com.github.tomakehurst:wiremock-standalone:3.0.3'
 }
 
 tasks.named('test') {
