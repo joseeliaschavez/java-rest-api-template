@@ -31,3 +31,11 @@ spring:
 
 tmdb:
   base-url: http://localhost:9080
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    database: POSTGRESQL
