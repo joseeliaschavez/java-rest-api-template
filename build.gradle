@@ -1,8 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
+	id 'org.springframework.boot' version '3.2.+'
 	id 'io.spring.dependency-management' version '1.1.4'
-	id "com.diffplug.spotless" version "6.19.0"
+	id "com.diffplug.spotless" version "6.+"
 	id 'jacoco'
 }
 
@@ -31,11 +31,11 @@ ext {
 
 dependencies {
 	// Spring Dependencies
-	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.1.+'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.2.+'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.2.+'
-	implementation 'org.springframework.boot:spring-boot-starter-web:3.1.+'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.1.+'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.+'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.+'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.2.+'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.+'
 
 	// Uncomment if you wish to use Docker Compose on local application startup
 	//developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
@@ -57,14 +57,14 @@ dependencies {
 
 	// Unit testing
 	testImplementation 'org.mockito:mockito-core:5.+'
-	testImplementation 'org.instancio:instancio-junit:2.+' // Creating test fixtures
+	testImplementation 'org.instancio:instancio-junit:4.+' // Creating test fixtures
 	testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.+' // Mocking WebClient calls
 
 	// Arch Unit
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
 
 	// Wiremock
-	testImplementation 'org.wiremock:wiremock-standalone:3.4.1'
+	testImplementation 'org.wiremock:wiremock-standalone:3.4.+'
 }
 
 tasks.named('test') {

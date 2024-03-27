@@ -1,5 +1,7 @@
 # java-rest-api-template
 
+![Github Actions Status](https://github.com/joseeliaschavez/java-rest-api-template/actions/workflows/gradle.yml/badge.svg?branch=develop&event=push)
+
 A template showcasing best practices for implementing a REST API in Java SpringBoot.
 
 The template showcases building a REST API using the movie industry as the domain.
