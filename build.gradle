@@ -25,10 +25,6 @@ repositories {
 	mavenCentral()
 }
 
-ext {
-	mapstructVersion = "1.5.5.Final"
-}
-
 dependencies {
 	// Spring Dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.2.+'
@@ -41,7 +37,7 @@ dependencies {
 	//developmentOnly 'org.springframework.boot:spring-boot-docker-compose'
 
 	// OpenAPI Auto-Generated Documentation
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.+'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.+'
 
 	// Mock DB
 	implementation 'com.h2database:h2'
@@ -64,7 +60,7 @@ dependencies {
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
 
 	// Wiremock
-	testImplementation 'org.wiremock:wiremock-standalone:3.4.+'
+	testImplementation 'org.wiremock:wiremock-standalone:3.5.+'
 }
 
 tasks.named('test') {
