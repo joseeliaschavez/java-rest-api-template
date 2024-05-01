@@ -57,7 +57,7 @@ dependencies {
 	testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.+' // Mocking WebClient calls
 
 	// Arch Unit
-	testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
+	testImplementation 'com.tngtech.archunit:archunit-junit5:1.3.0'
 
 	// Wiremock
 	testImplementation 'org.wiremock:wiremock-standalone:3.5.+'
