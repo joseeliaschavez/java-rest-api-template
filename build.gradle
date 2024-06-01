@@ -60,7 +60,7 @@ dependencies {
 	testImplementation 'com.tngtech.archunit:archunit-junit5:1.2.1'
 
 	// Wiremock
-	testImplementation 'org.wiremock:wiremock-standalone:3.5.+'
+	testImplementation 'org.wiremock:wiremock-standalone:3.6.+'
 }
 
 tasks.named('test') {
