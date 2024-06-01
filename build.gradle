@@ -29,8 +29,8 @@ dependencies {
 	// Spring Dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-actuator:3.2.+'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.2.+'
-	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.+'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.2.+'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.3.+'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux:3.3.+'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.+'
 
 	// Uncomment if you wish to use Docker Compose on local application startup
