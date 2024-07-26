@@ -36,9 +36,9 @@ jobs:
 
     - name: Build and Unit Test with Gradle
       run: gradle test spotbugsMain
-      uses: jwgmeligmeyling/spotbugs-github-action@master
+    - uses: jwgmeligmeyling/spotbugs-github-action@master
       with:
-        path: '**/spotbugsXml.xml'
+        path: 'build/spotbugs/main.xml'
 
     - name: Run Integration Tests
       env:
