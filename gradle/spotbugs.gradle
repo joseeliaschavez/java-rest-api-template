@@ -1,0 +1,21 @@
+spotbugs {
+    def buildDir = project.layout.buildDirectory.get().asFile
+
+    ignoreFailures = true
+    excludeFilter = file("$rootDir/spotbugs-exclude.xml")
+    reportsDir = file("$buildDir/spotbugs")
+}
+
+spotbugsMain {
+    reports {
+        html.enabled = true
+        xml.enabled = true
+    }
+}
+
+spotbugsTest {
+    reports {
+        html.enabled = true
+        xml.enabled = true
+    }
+}

@@ -1,0 +1,18 @@
+<FindBugsFilter>
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP" />
+        <Class name="~com.rangerforge.movieman.domain.entity.*" />
+    </Match>
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP" />
+        <Class name="~com.rangerforge.movieman.tmdb.model.*" />
+    </Match>
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP" />
+        <Class name="~com.rangerforge.movieman.usecase.model.*" />
+    </Match>
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2" />
+        <Class name="~com.rangerforge.movieman.domain.entity.*" />
+    </Match>
+</FindBugsFilter>
