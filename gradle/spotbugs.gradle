@@ -3,7 +3,7 @@ spotbugs {
 
     ignoreFailures = true
     excludeFilter = file("$rootDir/spotbugs-exclude.xml")
-    reportsDir = file("$buildDir/spotbugs")
+//    reportsDir = file("$buildDir/spotbugs")
 }
 
 spotbugsMain {
@@ -18,4 +18,13 @@ spotbugsTest {
         html.enabled = true
         xml.enabled = true
     }
+}
+
+pmd {
+    toolVersion = "7.0.0"
+    consoleOutput = false
+    ignoreFailures = true
+    maxFailures = 3
+    rulesMinimumPriority = 5
+    ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
 }
