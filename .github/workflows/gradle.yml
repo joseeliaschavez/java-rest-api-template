@@ -39,26 +39,27 @@ jobs:
     - name: Build and Unit Test with Gradle
       run: gradle test spotbugsMain pmdMain pmdTest
 
-    - name: Run SpotBugs Report
+    - name: Run Integration Tests
+      env:
+        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+      run: gradle integrationTest
+
+    - name: SpotBugs Report
       uses: lcollins/spotbugs-github-action@v3.0.0
       with:
         path: 'build/reports/spotbugs/main.xml'
 
-    - name: Run PMD Report
+    - name: PMD Report
       uses: pmd/pmd-github-action@v2
       with:
         rulesets: 'category/java/errorprone.xml,category/java/bestpractices.xml'
+        analyzeModifiedFilesOnly: false
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: pmd-report.sarif
         category: pmd
-
-    - name: Run Integration Tests
-      env:
-        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
-      run: gradle integrationTest
 
     - name: Jacoco Coverage Report
       id: jacoco
