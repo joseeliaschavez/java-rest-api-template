@@ -8,6 +8,7 @@ import java.util.List;
 import lombok.NoArgsConstructor;
 import lombok.Value;
 
+@SuppressWarnings("PMD.TooManyFields")
 @JsonNaming(
     PropertyNamingStrategies.SnakeCaseStrategy.class) // Use snake case to camel case conversion
 @NoArgsConstructor(force = true)
