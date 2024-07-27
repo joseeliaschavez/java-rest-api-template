@@ -22,12 +22,13 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+@SuppressWarnings("PMD.TestClassWithoutTestCases")
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.MOCK,
     classes = MoviemanApplication.class)
 @AutoConfigureMockMvc
 @ActiveProfiles("integration")
-public final class MovieControllerIntegrationTests {
+final class MovieControllerIntegrationTests {
   @Autowired private MockMvc mockMvc;
 
   @RegisterExtension
@@ -40,7 +41,7 @@ public final class MovieControllerIntegrationTests {
           .build();
 
   @Test
-  public void givenMovies_whenGetMovies_ThenStatus200() throws Exception {
+  void givenMovies_whenGetMovies_ThenStatus200() throws Exception {
     mockMvc
         .perform(get("/movies").contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
@@ -49,7 +50,7 @@ public final class MovieControllerIntegrationTests {
   }
 
   @Test
-  public void givenMovies_whenGetMovieByName_ThenStatus200() throws Exception {
+  void givenMovies_whenGetMovieByName_ThenStatus200() throws Exception {
     wireMock.stubFor(
         WireMock.get((urlPathMatching("/movie/[0-9]*")))
             .willReturn(
