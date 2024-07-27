@@ -60,7 +60,7 @@ class GetMovieByNameUseCaseTests {
         .thenReturn(Instancio.of(MovieResultModel.class).create());
 
     // Act
-    var actualResult = useCase.findByName(searchName);
+    useCase.findByName(searchName);
 
     // Assert
     verify(publicMovieRepository, atLeastOnce()).fetchMovieDetails(anyLong());
