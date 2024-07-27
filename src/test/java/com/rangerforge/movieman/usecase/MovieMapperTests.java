@@ -10,16 +10,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
-public class MovieMapperTests {
+class MovieMapperTests {
   private MovieMapper movieMapper;
 
   @BeforeEach
-  public void beforeEach() {
+  void beforeEach() {
     movieMapper = Mappers.getMapper(MovieMapper.class);
   }
 
   @Test
-  public void givenMovie_whenToMovieModel_shouldReturnResultModel() {
+  void givenMovie_whenToMovieModel_shouldReturnMovieModel() {
     // Arrange
     var movie =
         Instancio.of(Movie.class)
@@ -33,6 +33,20 @@ public class MovieMapperTests {
     assertThat(actualResult.getId()).isEqualTo(movie.getId());
     assertThat(actualResult.getTitle()).isEqualTo(movie.getTitle());
     assertThat(actualResult.getReleaseDate()).isEqualTo(movie.getReleaseDate());
+  }
+
+  @Test
+  void givenMovie_whenToMovieModel_shouldHaveCast() {
+    // Arrange
+    var movie =
+        Instancio.of(Movie.class)
+            .generate(field(Movie::getCast), gen -> gen.collection().size(1))
+            .create();
+
+    // Act
+    var actualResult = movieMapper.toMovieModel(movie);
+
+    // Assert
     assertThat(actualResult.getCast()).isNotNull();
     assertThat(actualResult.getCast()).isNotEmpty();
 

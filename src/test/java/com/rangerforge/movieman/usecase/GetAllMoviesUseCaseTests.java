@@ -17,13 +17,13 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class GetAllMoviesUseCaseTests {
+class GetAllMoviesUseCaseTests {
   @Mock private MovieMapper movieMapper;
   @Mock private MovieRepository movieRepository;
   @InjectMocks private GetAllMoviesUseCase useCase;
 
   @Test
-  public void givenMovies_whenGetAllMovies_thenReturnList() {
+  void givenMovies_whenGetAllMovies_thenReturnList() {
     // Arrange
     var expectedResults = Instancio.ofList(Movie.class).size(5).create();
     when(movieRepository.findAll()).thenReturn(expectedResults);
@@ -42,7 +42,7 @@ public class GetAllMoviesUseCaseTests {
   }
 
   @Test
-  public void givenMovies_whenGetAllMovies_thenMappingIsCorrect() {
+  void givenMovies_whenGetAllMovies_thenMappingIsCorrect() {
     // Arrange
     var expectedResult =
         Instancio.of(Movie.class)

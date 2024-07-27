@@ -23,13 +23,13 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @ExtendWith(MockitoExtension.class)
-public class TmdbMovieRepositoryTests {
+class TmdbMovieRepositoryTests {
   private ObjectMapper objectMapper;
   private MockWebServer mockWebServer;
   private TmdbMovieRepository movieRepository;
 
   @BeforeEach
-  public void beforeEach() throws IOException {
+  void beforeEach() throws IOException {
     objectMapper = new ObjectMapper();
     mockWebServer = new MockWebServer();
     mockWebServer.start();
@@ -43,12 +43,12 @@ public class TmdbMovieRepositoryTests {
   }
 
   @AfterEach
-  public void afterEach() throws IOException {
+  void afterEach() throws IOException {
     mockWebServer.shutdown();
   }
 
   @Test
-  public void givenMovieId_whenFetchMovieDetails_shouldReturnMovie()
+  void givenMovieId_whenFetchMovieDetails_shouldReturnMovie()
       throws IOException, InterruptedException {
     // Arrange
     var tmdbResponse =

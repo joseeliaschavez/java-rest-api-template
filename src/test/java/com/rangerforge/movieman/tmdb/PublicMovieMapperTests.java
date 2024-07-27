@@ -11,16 +11,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
-public class PublicMovieMapperTests {
+class PublicMovieMapperTests {
   private PublicMovieMapper publicMovieMapper;
 
   @BeforeEach
-  public void beforeEach() {
+  void beforeEach() {
     publicMovieMapper = Mappers.getMapper(PublicMovieMapper.class);
   }
 
+  @SuppressWarnings("PMD.JUnitTestContainsTooManyAsserts")
   @Test
-  public void givenTmdbMovieDetailResponse_whenToPublicMovie_shouldTranform() {
+  void givenTmdbMovieDetailResponse_whenToPublicMovie_shouldTransformToPublicMovie() {
     // Arrange
     var tmdbResponse =
         Instancio.of(TmdbMovieDetailResponse.class)

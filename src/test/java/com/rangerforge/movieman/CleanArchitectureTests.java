@@ -7,6 +7,7 @@ import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
+@SuppressWarnings("PMD.TestClassWithoutTestCases")
 @AnalyzeClasses(packages = {"com.rangerforge.movieman"})
 public class CleanArchitectureTests {
   @ArchTest

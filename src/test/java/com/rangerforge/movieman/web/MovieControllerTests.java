@@ -17,14 +17,14 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class MovieControllerTests {
+class MovieControllerTests {
   @Mock private GetAllMoviesUseCase getAllMoviesUseCase;
   @Mock private GetMovieByNameUseCase getMovieByNameUseCase;
 
   @InjectMocks private MovieController controller;
 
   @Test
-  public void givenMovies_whenGetMovies_thenCallsService() {
+  void givenMovies_whenGetMovies_thenCallsService() {
     // Arrange
     var expectedResults =
         new GetMoviesResult(Instancio.ofList(MovieResultModel.class).size(5).create());
@@ -39,7 +39,7 @@ public class MovieControllerTests {
   }
 
   @Test
-  public void givenMovies_whenGetMovieByName_thenCallsService() {
+  void givenMovies_whenGetMovieByName_thenCallsService() {
     // Arrange
     var expectedResult = Instancio.of(MovieResultModel.class).create();
     when(getMovieByNameUseCase.findByName(anyString()))

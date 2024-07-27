@@ -18,14 +18,14 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class GetMovieByNameUseCaseTests {
+class GetMovieByNameUseCaseTests {
   @Mock private MovieMapper movieMapper;
   @Mock private MovieRepository movieRepository;
   @Mock private PublicMovieRepository publicMovieRepository;
   @InjectMocks private GetMovieByNameUseCase useCase;
 
   @Test
-  public void givenMovies_whenFindByName_thenReturnList() {
+  void givenMovies_whenFindByName_thenReturnList() {
     // Arrange
     var searchName = "Ghost";
     var movie = Instancio.of(Movie.class).ignore(field(Movie::getTmdbId)).create();
