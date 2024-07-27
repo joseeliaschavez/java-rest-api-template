@@ -53,7 +53,7 @@ jobs:
     - name: PMD Report
       uses: pmd/pmd-github-action@v2
       with:
-        rulesets: 'category/java/errorprone.xml,category/java/bestpractices.xml'
+        rulesets: 'pmd-ruleset.xml'
         analyzeModifiedFilesOnly: false
 
     - name: Upload SARIF file
