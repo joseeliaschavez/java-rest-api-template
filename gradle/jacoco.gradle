@@ -13,6 +13,7 @@ jacocoTestReport {
                     dir: it,
                     exclude: [
                         'com/rangerforge/movieman/MoviemanApplication.class',
+                        'com/rangerforge/movieman/usecase/MovieMapperImpl.class',
                         'com/rangerforge/movieman/**/*Exception.*',
                         'com/rangerforge/movieman/config/**',
                         'com/rangerforge/movieman/domain/entity/**',\

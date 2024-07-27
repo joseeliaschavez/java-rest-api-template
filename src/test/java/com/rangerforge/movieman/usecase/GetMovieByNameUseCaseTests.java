@@ -6,6 +6,7 @@ import static org.instancio.Select.field;
 import static org.mockito.Mockito.*;
 
 import com.rangerforge.movieman.domain.entity.Movie;
+import com.rangerforge.movieman.domain.entity.PublicMovie;
 import com.rangerforge.movieman.domain.repository.MovieRepository;
 import com.rangerforge.movieman.domain.repository.PublicMovieRepository;
 import com.rangerforge.movieman.usecase.model.MovieResultModel;
@@ -44,5 +45,25 @@ class GetMovieByNameUseCaseTests {
     assertThat(actualResult).isNotNull();
     assertThat(actualResult.getMovies()).isNotEmpty();
     assertThat(actualResult.getMovies().size()).isEqualTo(1);
+  }
+
+  @Test
+  void givenMovies_whenFindByName_thenFetchMovieDetailsCalled() {
+    // Arrange
+    var searchName = "Ghost";
+    var movie = Instancio.of(Movie.class).create();
+    var publicMovie = Instancio.of(PublicMovie.class).create();
+    when(movieRepository.findFirst1ByTitleContaining(searchName))
+            .thenReturn(Collections.singletonList(movie));
+    when(publicMovieRepository.fetchMovieDetails(anyLong()))
+            .thenReturn(publicMovie);
+    when(movieMapper.toMovieModel(any(Movie.class)))
+            .thenReturn(Instancio.of(MovieResultModel.class).create());
+
+    // Act
+    var actualResult = useCase.findByName(searchName);
+
+    // Assert
+    verify(publicMovieRepository, atLeastOnce()).fetchMovieDetails(anyLong());
   }
 }
