@@ -1,0 +1,8 @@
+pmd {
+    toolVersion = "7.0.0"
+    consoleOutput = false
+    ignoreFailures = true
+    maxFailures = 3
+    rulesMinimumPriority = 5
+    ruleSets = ["$rootDir/pmd-ruleset.xml"]
+}

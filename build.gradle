@@ -10,6 +10,7 @@ plugins {
 
 apply from: 'gradle/spotless.gradle'
 apply from: 'gradle/spotbugs.gradle'
+apply from: 'gradle/pmd.gradle'
 apply from: 'gradle/jacoco.gradle'
 apply from: 'gradle/integration.gradle'
 

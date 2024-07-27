@@ -54,11 +54,10 @@ class GetMovieByNameUseCaseTests {
     var movie = Instancio.of(Movie.class).create();
     var publicMovie = Instancio.of(PublicMovie.class).create();
     when(movieRepository.findFirst1ByTitleContaining(searchName))
-            .thenReturn(Collections.singletonList(movie));
-    when(publicMovieRepository.fetchMovieDetails(anyLong()))
-            .thenReturn(publicMovie);
+        .thenReturn(Collections.singletonList(movie));
+    when(publicMovieRepository.fetchMovieDetails(anyLong())).thenReturn(publicMovie);
     when(movieMapper.toMovieModel(any(Movie.class)))
-            .thenReturn(Instancio.of(MovieResultModel.class).create());
+        .thenReturn(Instancio.of(MovieResultModel.class).create());
 
     // Act
     var actualResult = useCase.findByName(searchName);
