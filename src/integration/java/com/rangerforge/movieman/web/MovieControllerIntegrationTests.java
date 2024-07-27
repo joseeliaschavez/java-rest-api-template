@@ -22,7 +22,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
-@SuppressWarnings("PMD.TestClassWithoutTestCases")
+@SuppressWarnings("PMD.TestClassWithoutTestCases,PMD.JUnitTestsShouldIncludeAssert")
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.MOCK,
     classes = MoviemanApplication.class)
