@@ -25,7 +25,7 @@ public class GetMovieByNameUseCase {
                 movie -> {
                   if (movie.getTmdbId() != null) {
                     var tmdbMovie = publicMovieRepository.fetchMovieDetails(movie.getTmdbId());
-                    log.info(String.format("TMDB Result: %s", tmdbMovie.toString()));
+                    if (log.isInfoEnabled()) log.info("TMDB Result: {}", tmdbMovie.toString());
                   }
                 })
             .map(movieMapper::toMovieModel)
