@@ -61,7 +61,7 @@ dependencies {
 
 	// Unit testing
 	testImplementation 'org.mockito:mockito-core:5.+'
-	testImplementation 'org.instancio:instancio-junit:4.+' // Creating test fixtures
+	testImplementation 'org.instancio:instancio-junit:5.+' // Creating test fixtures
 	testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.+' // Mocking WebClient calls
 
 	// Arch Unit
